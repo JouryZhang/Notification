@@ -1,0 +1,23 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/message?useUnicode=true&useSSL=false&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=UTC
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+
+  mvc:
+    view:
+      prefix: /templates/
+      suffix: .html
+
+
+server:
+  port: 8080
+
+
+
+#mybatis
+mybatis:
+  mapper-locations: classpath*:/mapper/*.xml
+  #实体扫描，多个package用逗号或者分号分隔
+  typeAliasesPackage: com.home.*.entity

@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.0.2.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <groupId>com.shf</groupId>
+    <artifactId>sping-boot-security</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>sping-boot-security</name>
+    <packaging>jar</packaging>
+    <description>Demo project for Spring Boot</description>
+
+    <properties>
+        <java.version>1.8</java.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-starter-data-jpa</artifactId>-->
+<!--        </dependency>-->
+        <dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+            <version>1.3.0</version>
+        </dependency>
+        <!--activemq-->
+<!--        <dependency>-->
+<!--            <groupId>org.apache.activemq</groupId>-->
+<!--            <artifactId>activemq-spring</artifactId>-->
+<!--            <version>5.14.5</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework</groupId>-->
+<!--            <artifactId>spring-jms</artifactId>-->
+<!--            <version>3.2.8.RELEASE</version>-->
+<!--        </dependency>-->
+<!--        &lt;!&ndash; https://mvnrepository.com/artifact/org.springframework/org.springframework.jms &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework</groupId>-->
+<!--            <artifactId>org.springframework.jms</artifactId>-->
+<!--            <version>3.1.0.RELEASE</version>-->
+<!--        </dependency>-->
+
+        <!-- webSocket 开始-->
+        <dependency>
+            <groupId>javax.websocket</groupId>
+            <artifactId>javax.websocket-api</artifactId>
+            <version>1.1</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-api</artifactId>
+            <version>8.0</version>
+            <scope>provided</scope>
+        </dependency>
+        <!-- webSocket 结束-->
+        <!-- https://mvnrepository.com/artifact/com.alibaba/fastjson -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.62</version>
+        </dependency>
+        <!--ActiveMQ-->
+       <!-- <dependency>
+            <groupId>org.apache.activemq</groupId>
+            <artifactId>activemq-broker</artifactId>
+            <version>5.14.5</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.activemq</groupId>
+            <artifactId>activemq-pool</artifactId>
+            <version>5.14.5</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.activemq</groupId>
+            <artifactId>activemq-spring</artifactId>
+            <version>5.14.5</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.activemq</groupId>
+            <artifactId>artemis-jms-client</artifactId>
+            <version>2.3.0</version>
+        </dependency>
+        &lt;!&ndash;jms&ndash;&gt;
+        <dependency>
+            <groupId>org.messaginghub</groupId>
+            <artifactId>pooled-jms</artifactId>
+            <version>1.0.3</version>
+        </dependency>-->
+        <!-- ActiveMQ -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-activemq</artifactId>
+<!--            <classifier>exec</classifier>-->
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-websocket</artifactId>
+            <scope>provided</scope>
+        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.apache.activemq</groupId>-->
+<!--            <artifactId>activemq-pool</artifactId>-->
+<!--        </dependency>-->
+
+
+        <!--添加试图解析器-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
+        <!-- freemarker模板引擎视图 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-freemarker</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.thymeleaf.extras</groupId>
+            <artifactId>thymeleaf-extras-springsecurity4</artifactId>
+            <version>3.0.2.RELEASE</version>
+        </dependency>
+
+        <!-- 热部署，不用重启 ，这个在这里不需要-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <!-- jsp解析器 -->
+        <dependency>
+            <groupId>org.apache.tomcat.embed</groupId>
+            <artifactId>tomcat-embed-jasper</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <!--EasyPoi-->
+<!--        <dependency>-->
+<!--            <groupId>cn.afterturn</groupId>-->
+<!--            <artifactId>easypoi-base</artifactId>-->
+<!--            <version>3.0.3</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>cn.afterturn</groupId>-->
+<!--            <artifactId>easypoi-web</artifactId>-->
+<!--            <version>3.0.3</version> </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>cn.afterturn</groupId>-->
+<!--            <artifactId>easypoi-annotation</artifactId>-->
+<!--            <version>3.0.3</version>-->
+<!--        </dependency>-->
+
+<!--不加报错-->
+        <dependency>
+            <groupId>org.eclipse</groupId>
+            <artifactId>yasson</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.json</groupId>
+            <artifactId>javax.json-api</artifactId>
+            <version>1.1</version>
+        </dependency>
+        <dependency>
+        <groupId>org.glassfish</groupId>
+        <artifactId>javax.json</artifactId>
+        <version>1.1</version>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.mybatis.generator</groupId>
+                <artifactId>mybatis-generator-maven-plugin</artifactId>
+                <version>1.3.2</version>
+                <configuration>
+                    <verbose>true</verbose>
+                    <overwrite>true</overwrite>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+
+</project>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.home.dao.MessageDao" >
+  <resultMap id="BaseResultMap" type="com.home.entity.Message" >
+    <id column="messageId" property="messageid" jdbcType="VARCHAR" />
+    <result column="data" property="data" jdbcType="VARCHAR" />
+    <result column="publishTime" property="publishtime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    messageId, data, publishTime
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from message
+    where messageId = #{messageid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from message
+    where messageId = #{messageid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.home.entity.Message" >
+    insert into message (messageId, data, publishTime
+      )
+    values (#{messageid,jdbcType=VARCHAR}, #{data,jdbcType=VARCHAR}, #{publishtime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.home.entity.Message" >
+    insert into message
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="messageid != null" >
+        messageId,
+      </if>
+      <if test="data != null" >
+        data,
+      </if>
+      <if test="publishtime != null" >
+        publishTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="messageid != null" >
+        #{messageid,jdbcType=VARCHAR},
+      </if>
+      <if test="data != null" >
+        #{data,jdbcType=VARCHAR},
+      </if>
+      <if test="publishtime != null" >
+        #{publishtime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.home.entity.Message" >
+    update message
+    <set >
+      <if test="data != null" >
+        data = #{data,jdbcType=VARCHAR},
+      </if>
+      <if test="publishtime != null" >
+        publishTime = #{publishtime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where messageId = #{messageid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.home.entity.Message" >
+    update message
+    set data = #{data,jdbcType=VARCHAR},
+      publishTime = #{publishtime,jdbcType=TIMESTAMP}
+    where messageId = #{messageid,jdbcType=VARCHAR}
+  </update>
+
+  <select id="selectByPage" resultType="com.home.entity.Message">
+    select  * from message order by publishTime desc  limit #{from},#{to}
+  </select>
+</mapper>
